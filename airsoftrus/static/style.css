@@ -379,3 +379,14 @@ h2, h1 {
 .theme-dark .product-title {
     color: #f5f5f7 !important;
 }
+
+/* Стили для текста и фона в слайдере */
+.theme-light .theme-dependent {
+    background: rgba(255, 255, 255, 0.75);
+    color: #222;
+}
+
+.theme-dark .theme-dependent {
+    background: rgba(0, 0, 0, 0.75);
+    color: #f5f5f7;
+}

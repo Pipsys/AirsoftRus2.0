@@ -1,18 +1,168 @@
 {% extends "base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
 
-{% block title %}Регистрация{% endblock %}
+{% block title %}Регистрация в AirsoftRus 2.0{% endblock %}
 
 {% block content %}
-<div class="form-card">
-    <h2>Регистрация</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
-    </form>
-    <div class="form-text mt-3">
-        Уже есть аккаунт? <a href="{% url 'account_login' %}">Войти</a>
+<style>
+    /* Фоновое изображение */
+    .bg-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -10;
+        transition: filter 0.3s ease;
+    }
+    
+    /* Затемнение фона для темной темы */
+    .theme-dark .bg-image {
+        filter: brightness(0.6);
+    }
+    
+    /* Основной контейнер */
+    .register-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+    }
+    
+    /* Карточка формы */
+    .form-card {
+        background-color: rgba(255, 255, 255, 0.96);
+        padding: 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        width: 100%;
+        max-width: 500px;
+        margin: 20px;
+        backdrop-filter: blur(2px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        z-index: 2;
+    }
+    
+    /* Навигационная панель */
+    .navbar {
+        z-index: 1000;
+        position: relative;
+    }
+    
+    /* Поля ввода - светлая тема */
+    .form-control {
+        background-color: #f8f9fa !important;
+        border: 1px solid #e0e0e0 !important;
+        color: #333333 !important;
+        transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+        background-color: #ffffff !important;
+        border-color: #1c69d4 !important;
+        box-shadow: 0 0 0 0.2rem rgba(28, 105, 212, 0.25) !important;
+        color: #000000 !important;
+    }
+    
+    /* Темная тема */
+    .theme-dark .form-card {
+        background-color: rgba(30, 30, 30, 0.92);
+        border: 1px solid rgba(60, 60, 60, 0.2);
+        color: #ffffff;
+    }
+    
+    /* Серые поля ввода в темной теме */
+    .theme-dark .form-control {
+        background-color: #3a3a3a !important;
+        border-color: #555 !important;
+        color: #e0e0e0 !important;
+    }
+    
+    .theme-dark .form-control:focus {
+        background-color: #444 !important;
+        border-color: #1c69d4 !important;
+        color: #ffffff !important;
+    }
+    
+    /* Плейсхолдеры */
+    .form-control::placeholder {
+        color: #999999 !important;
+    }
+    
+    .theme-dark .form-control::placeholder {
+        color: #a0a0a0 !important;
+    }
+    
+    .form-card h2 {
+        font-weight: 700;
+        margin-bottom: 1.8rem;
+        color: #2c3e50;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    
+    .theme-dark .form-card h2 {
+        color: #ffffff;
+    }
+    
+    /* Кнопка регистрации */
+    .btn-primary {
+        width: 100%;
+        padding: 12px;
+        margin-top: 1rem;
+    }
+    
+    /* Ссылки */
+    .form-text a {
+        color: #1c69d4;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+    
+    .form-text a:hover {
+        color: #003087;
+        text-decoration: none;
+    }
+    
+    /* Адаптация для мобильных */
+    @media (max-width: 576px) {
+        .form-card {
+            padding: 1.8rem;
+            margin: 15px;
+        }
+    }
+</style>
+
+<!-- Фоновое изображение -->
+<img src="{% static 'slider/slide1.jpg' %}" class="bg-image" alt="Фон страницы регистрации">
+
+<!-- Контейнер с формой -->
+<div class="register-wrapper">
+    <div class="form-card">
+        <h2>Регистрация</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+        </form>
+        <div class="form-text mt-3">
+            Уже есть аккаунт? <a href="{% url 'account_login' %}">Войти</a>
+        </div>
     </div>
 </div>
+
+<script>
+    // Автоматическое применение темы
+    document.addEventListener('DOMContentLoaded', function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.body.className = `theme-${theme}`;
+    });
+</script>
 {% endblock %}
