@@ -240,8 +240,142 @@ h2, h1 {
 :-ms-input-placeholder { color: #86868b; }
 ::placeholder { color: #86868b; }
 
-@media (max-width: 576px) {
-    .form-card {
-        padding: 18px 8px 16px 8px;
-    }
+/* Светлая тема (по умолчанию) */
+.theme-light {
+    background: #fff;
+    color: #222;
+}
+.theme-light .navbar,
+.theme-light footer,
+.theme-light .footer-navbar {
+    background: #fff !important;
+    color: #222 !important;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+}
+.theme-light .card,
+.theme-light .form-card,
+.theme-light .list-group-item {
+    background: #fff;
+    color: #222;
+    border-color: #e5e5e5;
+}
+.theme-light .btn-primary, .theme-light .btn-info {
+    background: #1c69d4;
+    color: #fff;
+}
+.theme-light .btn-primary:hover, .theme-light .btn-info:hover {
+    background: #003087;
+    color: #fff;
+}
+.theme-light .btn-success {
+    background: #222;
+    color: #fff;
+}
+.theme-light .btn-success:hover {
+    background: #1c69d4;
+    color: #fff;
+}
+.theme-light .btn-secondary {
+    background: #f5f5f5;
+    color: #222;
+}
+.theme-light .list-group-item.active, .theme-light .list-group-item-action.active {
+    background: #1c69d4 !important;
+    color: #fff !important;
+    border-color: #1c69d4;
+}
+
+/* Тёмная тема */
+.theme-dark {
+    background: #181a1b;
+    color: #f5f5f7;
+}
+.theme-dark .navbar,
+.theme-dark footer,
+.theme-dark .footer-navbar {
+    background: #23272b !important;
+    color: #f5f5f7 !important;
+    border-bottom: 1px solid #23272b;
+    border-top: 1px solid #23272b;
+}
+.theme-dark .navbar .navbar-brand,
+.theme-dark .navbar .nav-link,
+.theme-dark .navbar .dropdown-item {
+    color: #f5f5f7 !important;
+}
+.theme-dark .card,
+.theme-dark .form-card,
+.theme-dark .list-group-item {
+    background: #23272b;
+    color: #f5f5f7;
+    border-color: #23272b;
+}
+.theme-dark .btn-primary, .theme-dark .btn-info {
+    background: #1c69d4;
+    color: #fff;
+}
+.theme-dark .btn-primary:hover, .theme-dark .btn-info:hover {
+    background: #003087;
+    color: #fff;
+}
+.theme-dark .btn-success {
+    background: #f5f5f7;
+    color: #23272b;
+}
+.theme-dark .btn-success:hover {
+    background: #1c69d4;
+    color: #fff;
+}
+.theme-dark .btn-secondary {
+    background: #23272b;
+    color: #f5f5f7;
+}
+.theme-dark .list-group-item.active, .theme-dark .list-group-item-action.active {
+    background: #1c69d4 !important;
+    color: #fff !important;
+    border-color: #1c69d4;
+}
+.theme-dark .form-control {
+    background: #23272b;
+    color: #f5f5f7;
+    border-color: #23272b;
+}
+.theme-dark .form-control:focus {
+    background: #23272b;
+    color: #fff;
+    border-color: #1c69d4;
+}
+.theme-dark .form-label {
+    color: #b0b0b0;
+}
+.theme-dark .form-card h2,
+.theme-dark h2, .theme-dark h1 {
+    color: #f5f5f7;
+}
+.theme-dark .form-card .form-text {
+    color: #b0b0b0;
+}
+.theme-dark .table th, .theme-dark .table td {
+    background: #23272b;
+    color: #f5f5f7;
+    border: none;
+}
+.theme-dark .alert {
+    background: #23272b;
+    color: #f5f5f7;
+    border-color: #1c69d4;
+}
+
+/* последние изменения: стилизация product-title-link для тёмной темы */
+.product-title-link {
+    color: #222;
+    transition: color 0.2s;
+}
+.theme-dark .product-title-link {
+    color: #f5f5f7 !important;
+}
+.theme-dark .card-title,
+.theme-dark .product-title {
+    color: #f5f5f7 !important;
 }

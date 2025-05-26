@@ -7,6 +7,7 @@
     <title>{% block title %}AirsoftRus 2.0{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     {% block extra_css %}{% endblock %}
     <style>
         html, body {
@@ -26,22 +27,23 @@
             position: relative;
             bottom: 0;
         }
-        /* Стили для футера в стиле navbar */
-        .footer-navbar {
-            background:rgb(255, 255, 255) !important;
-            color:rgb(0, 0, 0) !important;
-            border-top: 2px solidrgb(255, 255, 255);
-            font-size: 1.1rem;
-            letter-spacing: 1px;
+        .theme-toggle-btn {
+            border: none;
+            background: transparent;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            color: inherit;
+            cursor: pointer;
+            transition: color 0.2s;
+            padding: 0;
         }
-        .footer-navbar p {
-            margin: 0;
-            color:rgb(14, 14, 14) !important;
+        .theme-toggle-btn:focus {
+            outline: none;
         }
     </style>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body class="theme-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
             <a class="navbar-brand" href="/">AirsoftRus 2.0</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -60,7 +62,7 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="navbar-nav">
+                <ul class="navbar-nav align-items-center">
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'cart:cart_detail' %}">
                             Корзина
@@ -86,6 +88,11 @@
                         <a class="nav-link" href="{% url 'account_signup' %}">Регистрация</a>
                     </li>
                     {% endif %}
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="theme-toggle-btn" title="Переключить тему">
+                            <i id="theme-toggle-icon" class="bi bi-moon"></i>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -102,6 +109,23 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Theme switcher
+    function setTheme(theme) {
+        document.body.className = theme;
+        localStorage.setItem('theme', theme);
+        document.getElementById('theme-toggle-icon').className = theme === 'theme-dark' ? 'bi bi-sun' : 'bi bi-moon';
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        var savedTheme = localStorage.getItem('theme') || 'theme-light';
+        setTheme(savedTheme);
+
+        document.getElementById('theme-toggle').onclick = function() {
+            var current = document.body.className;
+            setTheme(current === 'theme-light' ? 'theme-dark' : 'theme-light');
+        };
+    });
+    </script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>
