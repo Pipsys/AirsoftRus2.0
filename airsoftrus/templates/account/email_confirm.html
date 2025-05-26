@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Подтверждение почты{% endblock %}
+
+{% block extra_css %}
+{% comment %} <style>
+body { background: none !important; }
+</style> {% endcomment %}
+{% endblock %}
+
+{% block content %}
+<div class="auth-bg" style="min-height:100vh;display:flex;align-items:center;">
+    <div class="form-card">
+        <h2>Подтверждение почты</h2>
+        {% if confirmation %}
+            <p>Пожалуйста, подтвердите ваш email для завершения регистрации.</p>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Подтвердить</button>
+            </form>
+        {% else %}
+            <p class="text-success">Ваш email успешно подтвержден!</p>
+            <a href="{% url 'home' %}" class="btn btn-success">На главную</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

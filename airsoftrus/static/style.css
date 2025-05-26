@@ -1,0 +1,215 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background: #f4f7f2;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #232d1b;
+}
+
+.auth-bg {
+    background: url('/static/military-bg.jpg') no-repeat center center fixed, linear-gradient(135deg, #e6f2d9 0%, #cde3b2 100%);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+.container, .container-fluid {
+    flex: 1 0 auto;
+}
+
+.card {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border-radius: 14px;
+    border: 1px solid #d0e2c6;
+    background: #fff;
+    color: #232d1b;
+}
+
+.navbar {
+    font-size: 1.1rem;
+    border-bottom: 2px solid #b3c686;
+    background: #e6f2d9 !important;
+}
+
+.navbar .navbar-brand {
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #5b6e2d !important;
+}
+
+.navbar .nav-link, .navbar .dropdown-item {
+    color: #232d1b !important;
+}
+
+.navbar .nav-link.active, .navbar .dropdown-item.active {
+    background: #b3c686 !important;
+    color: #fff !important;
+}
+
+.btn-primary, .btn-info {
+    border-radius: 20px;
+    background: #7bb661;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(91,110,45,0.10);
+}
+
+.btn-primary:hover, .btn-info:hover {
+    background: #5b6e2d;
+    color: #fff;
+}
+
+.btn-success {
+    background: #b3c686;
+    border: none;
+    font-weight: 600;
+    color: #232d1b;
+}
+
+.btn-success:hover {
+    background: #7bb661;
+    color: #fff;
+}
+
+.btn-warning {
+    background: #ffe066;
+    border: none;
+    color: #232d1b;
+    font-weight: 600;
+}
+
+.btn-warning:hover {
+    background: #ffd23f;
+    color: #232d1b;
+}
+
+.btn-danger {
+    background: #e57373;
+    border: none;
+    font-weight: 600;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #b71c1c;
+}
+
+.btn-secondary {
+    border-radius: 20px;
+    background: #cde3b2;
+    color: #232d1b;
+    border: none;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+    background: #fff;
+    color: #232d1b;
+}
+
+footer {
+    background: #e6f2d9;
+    color: #5b6e2d;
+    border-top: 2px solid #b3c686;
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    letter-spacing: 1px;
+}
+
+h2, h1 {
+    font-weight: 700;
+    color: #5b6e2d;
+    letter-spacing: 1px;
+}
+
+.form-control {
+    border-radius: 10px;
+    min-height: 44px;
+    font-size: 1.05rem;
+    background: #f4f7f2;
+    color: #232d1b;
+    border: 1px solid #b3c686;
+}
+
+.form-control:focus {
+    background: #fff;
+    color: #232d1b;
+    border-color: #7bb661;
+    box-shadow: 0 0 0 0.2rem rgba(179,198,134,0.10);
+}
+
+.form-label {
+    font-weight: 500;
+    color: #5b6e2d;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-card {
+    max-width: 420px;
+    margin: 40px auto 0 auto;
+    padding: 32px 28px 24px 28px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    color: #232d1b;
+    border: 1px solid #b3c686;
+}
+
+.form-card h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #5b6e2d;
+}
+
+.form-card .btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.form-card .form-text {
+    color: #5b6e2d;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.form-card .alert {
+    margin-bottom: 1rem;
+}
+
+.list-group-item {
+    background: #f4f7f2;
+    color: #232d1b;
+    border: 1px solid #b3c686;
+    border-radius: 8px !important;
+    margin-bottom: 6px;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+.list-group-item.active, .list-group-item-action.active {
+    background: #b3c686 !important;
+    color: #fff !important;
+    border-color: #b3c686;
+}
+
+::-webkit-input-placeholder { color: #7bb661; }
+::-moz-placeholder { color: #7bb661; }
+:-ms-input-placeholder { color: #7bb661; }
+::placeholder { color: #7bb661; }
+
+@media (max-width: 576px) {
+    .form-card {
+        padding: 18px 8px 16px 8px;
+    }
+}

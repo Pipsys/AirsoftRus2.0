@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Мой профиль{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2 class="mb-4 text-center">Мой профиль</h2>
+            <div class="card mt-3">
+                <div class="card-body">
+                    <p><strong>Email:</strong> {{ user.email }}</p>
+                    <p><strong>Имя:</strong> {{ user.first_name }}</p>
+                    <p><strong>Фамилия:</strong> {{ user.last_name }}</p>
+                    <p><strong>Телефон:</strong> {{ user.phone }}</p>
+                    <p><strong>Адрес:</strong> {{ user.address }}</p>
+                    <a href="{% url 'accounts:profile_edit' %}" class="btn btn-primary mt-3">Редактировать профиль</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
