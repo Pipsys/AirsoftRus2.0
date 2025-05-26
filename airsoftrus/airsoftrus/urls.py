@@ -19,14 +19,15 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.shortcuts import redirect
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('allauth.urls')),
     path('cart/', include('cart.urls')),
-    path('', include('shop.urls')),
-    path('', lambda request: redirect('shop:product_list'), name='home'),  # Альтернатива: корень как home
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),  # Главная страница слайдер
+    path('shop/', include('shop.urls')),  # Каталог теперь по /shop/
 ]
 
 if settings.DEBUG:

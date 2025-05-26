@@ -4,17 +4,12 @@ html, body {
 
 body {
     min-height: 100vh;
-    background: #f4f7f2;
+    background: #fff;
     display: flex;
     flex-direction: column;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: #232d1b;
-}
-
-.auth-bg {
-    background: url('/static/military-bg.jpg') no-repeat center center fixed, linear-gradient(135deg, #e6f2d9 0%, #cde3b2 100%);
-    background-size: cover;
-    background-blend-mode: multiply;
+    font-family: 'BMWTypeNext', 'Segoe UI', Arial, sans-serif;
+    color: #222;
+    letter-spacing: 0.01em;
 }
 
 .container, .container-fluid {
@@ -22,133 +17,168 @@ body {
 }
 
 .card {
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    border-radius: 14px;
-    border: 1px solid #d0e2c6;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
     background: #fff;
-    color: #232d1b;
+    color: #222;
+    transition: box-shadow 0.2s;
+}
+.card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.10);
 }
 
 .navbar {
-    font-size: 1.1rem;
-    border-bottom: 2px solid #b3c686;
-    background: #e6f2d9 !important;
+    font-size: 1.08rem;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff !important;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
 }
 
 .navbar .navbar-brand {
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #5b6e2d !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #222 !important;
+    font-size: 1.4rem;
+    text-transform: uppercase;
 }
 
 .navbar .nav-link, .navbar .dropdown-item {
-    color: #232d1b !important;
+    color: #222 !important;
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
 .navbar .nav-link.active, .navbar .dropdown-item.active {
-    background: #b3c686 !important;
-    color: #fff !important;
+    color: #1c69d4 !important;
+    background: none !important;
 }
 
 .btn-primary, .btn-info {
-    border-radius: 20px;
-    background: #7bb661;
+    border-radius: 8px;
+    background: #1c69d4;
     border: none;
     color: #fff;
     font-weight: 600;
     transition: background 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px rgba(91,110,45,0.10);
+    box-shadow: 0 2px 8px rgba(28,105,212,0.08);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 1.05rem;
 }
 
 .btn-primary:hover, .btn-info:hover {
-    background: #5b6e2d;
+    background: #003087;
     color: #fff;
 }
 
 .btn-success {
-    background: #b3c686;
+    background: #222;
     border: none;
     font-weight: 600;
-    color: #232d1b;
+    color: #fff;
+    border-radius: 8px;
+    text-transform: uppercase;
 }
 
 .btn-success:hover {
-    background: #7bb661;
+    background: #1c69d4;
     color: #fff;
 }
 
 .btn-warning {
     background: #ffe066;
     border: none;
-    color: #232d1b;
+    color: #222;
     font-weight: 600;
+    border-radius: 8px;
 }
 
 .btn-warning:hover {
     background: #ffd23f;
-    color: #232d1b;
+    color: #222;
 }
 
 .btn-danger {
-    background: #e57373;
+    background: #e2001a;
     border: none;
     font-weight: 600;
     color: #fff;
+    border-radius: 8px;
 }
 
 .btn-danger:hover {
-    background: #b71c1c;
+    background: #a80014;
 }
 
 .btn-secondary {
-    border-radius: 20px;
-    background: #cde3b2;
-    color: #232d1b;
+    border-radius: 8px;
+    background: #f5f5f5;
+    color: #222;
     border: none;
 }
 
 .table th, .table td {
     vertical-align: middle;
     background: #fff;
-    color: #232d1b;
+    color: #222;
+    border: none;
 }
 
 footer {
-    background: #e6f2d9;
-    color: #5b6e2d;
-    border-top: 2px solid #b3c686;
+    background: #fff;
+    color: #222;
+    border-top: 1px solid #e5e5e5;
     flex-shrink: 0;
     width: 100%;
     position: relative;
     bottom: 0;
-    letter-spacing: 1px;
+    letter-spacing: 0.01em;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1.5rem 0 1rem 0;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.03);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: #222;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
 }
 
 h2, h1 {
     font-weight: 700;
-    color: #5b6e2d;
-    letter-spacing: 1px;
+    color: #222;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
 }
 
 .form-control {
-    border-radius: 10px;
+    border-radius: 8px;
     min-height: 44px;
     font-size: 1.05rem;
-    background: #f4f7f2;
-    color: #232d1b;
-    border: 1px solid #b3c686;
+    background: #f5f5f5;
+    color: #222;
+    border: 1px solid #e5e5e5;
+    transition: border-color 0.2s;
 }
 
 .form-control:focus {
     background: #fff;
-    color: #232d1b;
-    border-color: #7bb661;
-    box-shadow: 0 0 0 0.2rem rgba(179,198,134,0.10);
+    color: #222;
+    border-color: #1c69d4;
+    box-shadow: 0 0 0 0.2rem rgba(28,105,212,0.08);
 }
 
 .form-label {
     font-weight: 500;
-    color: #5b6e2d;
+    color: #86868b;
+    text-transform: uppercase;
+    font-size: 0.98rem;
 }
 
 .form-group {
@@ -160,16 +190,18 @@ h2, h1 {
     margin: 40px auto 0 auto;
     padding: 32px 28px 24px 28px;
     background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-    color: #232d1b;
-    border: 1px solid #b3c686;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    color: #222;
+    border: 1px solid #e5e5e5;
 }
 
 .form-card h2 {
     margin-bottom: 1.5rem;
     text-align: center;
-    color: #5b6e2d;
+    color: #222;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .form-card .btn {
@@ -178,7 +210,7 @@ h2, h1 {
 }
 
 .form-card .form-text {
-    color: #5b6e2d;
+    color: #86868b;
     font-size: 0.95rem;
     margin-top: 0.5rem;
     text-align: center;
@@ -189,24 +221,24 @@ h2, h1 {
 }
 
 .list-group-item {
-    background: #f4f7f2;
-    color: #232d1b;
-    border: 1px solid #b3c686;
+    background: #fff;
+    color: #222;
+    border: 1px solid #e5e5e5;
     border-radius: 8px !important;
     margin-bottom: 6px;
     font-weight: 500;
     transition: background 0.2s, color 0.2s;
 }
 .list-group-item.active, .list-group-item-action.active {
-    background: #b3c686 !important;
+    background: #1c69d4 !important;
     color: #fff !important;
-    border-color: #b3c686;
+    border-color: #1c69d4;
 }
 
-::-webkit-input-placeholder { color: #7bb661; }
-::-moz-placeholder { color: #7bb661; }
-:-ms-input-placeholder { color: #7bb661; }
-::placeholder { color: #7bb661; }
+::-webkit-input-placeholder { color: #86868b; }
+::-moz-placeholder { color: #86868b; }
+:-ms-input-placeholder { color: #86868b; }
+::placeholder { color: #86868b; }
 
 @media (max-width: 576px) {
     .form-card {
